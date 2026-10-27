@@ -1,0 +1,24 @@
+=== PRE-COMMIT HOOK | 2026-10-27 00:44:50 | rama: feature/1-copago-y-cobro ===
+
+▶ 1/3 Formatter (Black)
+  $ python3 -m black --check --diff src/vitalys tests
+--- /home/ncolman@andreani.com.ar/Documentos/UTN/Metodologia II/Unidad 3/Tps/Github/vitalys-calidad/src/vitalys/copago.py	2026-10-27 03:44:31.097956+00:00
++++ /home/ncolman@andreani.com.ar/Documentos/UTN/Metodologia II/Unidad 3/Tps/Github/vitalys-calidad/src/vitalys/copago.py	2026-10-27 03:44:50.639407+00:00
+@@ -1,8 +1,8 @@
+ """Cálculo del copago que abona un paciente de Vitalys App por una consulta."""
+ 
+-DESCUENTO_PLAN = {'basico':0.0,'plus':0.30,'premium':0.60}
++DESCUENTO_PLAN = {"basico": 0.0, "plus": 0.30, "premium": 0.60}
+ RECARGO_URGENCIA = 0.20
+ DESCUENTO_EDAD = 0.50
+ EDAD_MAYORIA = 18
+ EDAD_JUBILATORIA = 65
+ 
+would reformat /home/ncolman@andreani.com.ar/Documentos/UTN/Metodologia II/Unidad 3/Tps/Github/vitalys-calidad/src/vitalys/copago.py
+
+Oh no! 💥 💔 💥
+1 file would be reformatted, 4 files would be left unchanged.
+
+✖ [1/3 Formatter (Black)] FALLÓ. Commit ABORTADO (exit code 1).
+  Corregí los errores, volvé a hacer 'git add' y repetí el commit.
+  Log completo: .git/hook-logs/pre-commit_20261027_004450.log

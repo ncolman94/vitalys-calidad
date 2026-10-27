@@ -1,0 +1,56 @@
+$ radon cc src/vitalys -s -a
+src/vitalys/pagos.py
+    C 27:0 ServicioCobro - A (4)
+    M 34:4 ServicioCobro.cobrar_turno - A (4)
+    C 6:0 PasarelaPagos - A (2)
+    C 16:0 Notificador - A (2)
+    M 9:4 PasarelaPagos.consultar_estado_tarjeta - A (1)
+    M 12:4 PasarelaPagos.cobrar - A (1)
+    M 19:4 Notificador.enviar_comprobante - A (1)
+    C 23:0 PagoRechazadoError - A (1)
+    M 30:4 ServicioCobro.__init__ - A (1)
+src/vitalys/turnos.py
+    M 67:4 AgendaTurnos.registrar - A (4)
+    F 42:0 calcular_precio - A (3)
+    C 60:0 AgendaTurnos - A (3)
+    F 53:0 _obtener_especialidad - A (2)
+    M 91:4 AgendaTurnos.recalcular_precio - A (2)
+    M 99:4 AgendaTurnos.exportar - A (2)
+    C 11:0 Especialidad - A (1)
+    C 27:0 Turno - A (1)
+    C 38:0 TurnoInvalidoError - A (1)
+    M 63:4 AgendaTurnos.__init__ - A (1)
+src/vitalys/copago.py
+    F 10:0 calcular_copago - B (7)
+
+20 blocks (classes, functions, methods) analyzed.
+Average complexity: A (2.2)
+$ jscpd src/vitalys
+┌────────┬────────────────┬─────────────┬──────────────┬──────────────┬──────────────────┬───────────────────┐
+│ Format │ Files analyzed │ Total lines │ Total tokens │ Clones found │ Duplicated lines │ Duplicated tokens │
+├────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤
+│ python │ 3              │ 181         │ 1404         │ 0            │ 0 (0%)           │ 0 (0%)            │
+├────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤
+│ Total: │ 3              │ 181         │ 1404         │ 0            │ 0 (0%)           │ 0 (0%)            │
+└────────┴────────────────┴─────────────┴──────────────┴──────────────┴──────────────────┴───────────────────┘
+Found 0 clones.
+time: 25.294ms
+
+💡 Auto-refactor with AI: npx skills add kucherenko/jscpd
+🎩 New: Gangsta Agents — discipline your AI coding → gangsta.page
+💖 Support jscpd project → https://opencollective.com/jscpd
+$ ruff check src/vitalys tests
+All checks passed!
+$ pylint src/vitalys
+
+------------------------------------
+Your code has been rated at 10.00/10
+
+$ pip-audit -r requirements.txt --no-deps --disable-pip
+WARNING:pip_audit._cli:--no-deps is supported, but users are encouraged to fully hash their pinned dependencies
+WARNING:pip_audit._cli:Consider using a tool like `pip-compile`: https://pip-tools.readthedocs.io/en/latest/#using-hashes
+No known vulnerabilities found
+$ pip-audit -r requirements-dev.txt --no-deps --disable-pip
+WARNING:pip_audit._cli:--no-deps is supported, but users are encouraged to fully hash their pinned dependencies
+WARNING:pip_audit._cli:Consider using a tool like `pip-compile`: https://pip-tools.readthedocs.io/en/latest/#using-hashes
+No known vulnerabilities found
