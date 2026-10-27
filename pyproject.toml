@@ -1,0 +1,39 @@
+[project]
+name = "vitalys-calidad"
+version = "1.0.0"
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+extend-exclude = ["src/legacy"]   # código heredado en cuarentena: se audita aparte (TP3 ej. 2)
+
+[tool.ruff.lint]
+# E/W pycodestyle, F pyflakes, B bugbear, C90 complejidad, N nombres, UP pyupgrade, SIM simplificaciones
+select = ["E", "W", "F", "B", "C90", "N", "UP", "SIM"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["src/vitalys"]
+branch = true
+relative_files = true
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_empty = true
+
+[tool.pylint."messages control"]
+# Las interfaces Protocol y los servicios de un único caso de uso tienen 1 método público por diseño
+disable = ["too-few-public-methods"]

@@ -1,0 +1,5 @@
+requests==2.19.1
+urllib3==1.24.1
+jinja2==2.10
+pyyaml==5.3
+flask==1.0

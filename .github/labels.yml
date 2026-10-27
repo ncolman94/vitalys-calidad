@@ -1,0 +1,43 @@
+# Matriz de etiquetas del repositorio Vitalys App (importable con github-label-sync o la CLI gh)
+# --- Tipo de trabajo (exactamente 1 por issue/PR) ---
+- name: bug
+  color: "d73a4a"
+  description: "Fallo funcional o lógico confirmado que rompe un comportamiento esperado"
+- name: feature
+  color: "0e8a16"
+  description: "Nueva capacidad lógica del negocio (historia de usuario)"
+- name: technical-debt
+  color: "fbca04"
+  description: "Refactor, complejidad alta, duplicación o desvío de estilo a sanear"
+- name: documentation
+  color: "0075ca"
+  description: "Actualización de contratos de API, esquemas de BD, diagramas o README"
+- name: security
+  color: "b60205"
+  description: "Dependencia vulnerable (CVE) o patrón inseguro detectado"
+# --- Severidad (solo bugs y security) ---
+- name: "severity: critical"
+  color: "8b0000"
+  description: "Bloquea una funcionalidad central o expone datos; sin workaround"
+- name: "severity: major"
+  color: "e99695"
+  description: "Afecta una funcionalidad importante; existe workaround"
+- name: "severity: minor"
+  color: "f9d0c4"
+  description: "Impacto bajo o cosmético"
+# --- Estado frente a la DoD (ciclo de vida) ---
+- name: "status: triage"
+  color: "ededed"
+  description: "Recién creado, pendiente de clasificar"
+- name: "status: needs-info"
+  color: "d4c5f9"
+  description: "Faltan datos de la plantilla para reproducir o estimar"
+- name: "dod: blocked"
+  color: "000000"
+  description: "El PR incumple al menos un criterio de la DoD; no se puede mergear"
+- name: "dod: ready-for-review"
+  color: "c2e0c6"
+  description: "Controles automáticos en verde; espera revisión por pares (DoD-4)"
+- name: "dod: approved"
+  color: "2ea44f"
+  description: "Cumple los 6 criterios de la DoD; habilitado para merge"
